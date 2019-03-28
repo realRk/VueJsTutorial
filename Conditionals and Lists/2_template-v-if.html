@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <template v-if="displayTemplate">
+            <h1>This is wrapped inside a template</h1>
+            <p>this one is a paragraph and this also wrapped inside a template </p>
+        </template>
+        <template v-else>
+                <h1>Second template</h1>
+                <p>Second  paragraph </p>
+            </template>
+        <button v-on:click="displayTemplate = !displayTemplate">Toggle Block</button>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                displayTemplate:true
+            }
+        })    
+    </script>
+</body>
+</html>
