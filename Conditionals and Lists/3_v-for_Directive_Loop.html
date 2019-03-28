@@ -12,7 +12,8 @@
     <div>
         <ul>
             <!-- v-for is used to iterate through list -->
-            <li v-for = "name in nameList">{{name}}</li>
+            <li v-for = "(name,index) in nameList">{{name}} - Index {{index}}</li>
+            <!-- (name, index) for getting index also -->
         </ul>
     </div>
 </div>
