@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue-js tutorial</title>
+    <script src = "vue.js" ></script>
+  </head>
+  <body v-on:mousemove = "getCoordinates">
+    <div id="main">
+      <h1>{{title}}</h1>
+      <input type="text" v-on:input="changePara">
+      <p>{{name}}</p>
+      <p>link to google <a v-bind:href="link">hahaha</a></p>
+      <p v-html="htmlRender"></p>
+      <button v-on:click = "increaseCount">Click</button>
+      <button v-on:click = "decreaseCount">Decrese</button>
+      <h4>{{count}}</h4>
+      <!-- <h1 v-on:mousemove = "getCoordinates">{{cX}} - {{cY}}</h1> -->
+      <input type="number" v-on:input="passingEventAlongArg(2,$event)">
+
+
+      <br>
+      <h1>Two way binding</h1>
+      <!-- Two way binding -->
+      <input type="text" v-model="twb">
+      <h3>{{twb}}</h3>
+      <button v-on:click="count++"></button>
+      <!-- <h3>{{twbc()}}</h3> -->
+
+    </div>
+    <script src = 'index.js'></script>  
+  </body>
+</html>

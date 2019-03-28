@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #app{
+            display:flex;
+            justify-content: flex-start;
+        }
+        .color{
+            margin-left:10px;
+            width:300px;
+            height:300px;
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+            <div class="color" @click="flag1 = !flag1" :class = "retGreen"></div>
+            <div class="color" @click="flag2 = !flag2" :class = "retYellow"></div>
+            <div class="color" @click="flag3 = !flag3" :class = "retBlue"></div>
+    </div>
+</body>
+<script>
+new Vue({
+    el:'#app',
+    data:{
+        flag1:false,
+        flag2:false,
+        flag3:false,
+    },
+    computed:{
+        retGreen:function(){
+            return{'green':this.flag1}
+        },
+        retYellow:function(){
+            return{'yellow':this.flag2}
+        },
+        retBlue:function(){
+            return{'blue':this.flag3}
+        }
+    }
+})
+</script>
+</html>
