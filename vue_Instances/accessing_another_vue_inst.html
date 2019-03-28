@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app_one">
+        <h1>{{title}}</h1>
+        <button v-on:click= "onInstOneClick">change string</button>
+    </div>
+    <div id="app_two">
+        <h1>{{title}}</h1>
+        <button v-on:click= "changeItFromTwo">change string</button>
+    </div>
+    <script>
+    let vm_app_one = new Vue({
+        el:'#app_one',
+        data:{
+            title:"this will change soon"
+        },
+        methods:{
+            onInstOneClick:function(){
+                this.title = "let me see"
+            }
+        }
+    })
+
+    let vm_app_two = new Vue({
+        el:'#app_two',
+        data:{
+            title:"this is second Instance"
+        },
+        methods:{
+            changeItFromTwo:function(){
+                vm_app_one.title = "changed from second instance"
+            }
+        }
+    })
+
+
+    </script>    
+</body>
+</html>
