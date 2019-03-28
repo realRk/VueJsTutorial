@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Array of Objects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul v-for = "obj in objArray">
+            <li v-for = "(each,key) in obj">
+                <span>{{key}} - {{each}}</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                objArray:[
+                    {name:"nameOne",age:1,phone:123},
+                    {name:"nameTwo",age:2,phone:1234},
+                    {name:"nameThree",age:3,phone:12345},
+                    {name:"nameFour",age:4,phone:12346},
+                    {name:"nameFive",age:5,phone:12347},
+                    {name:"nameSix",age:6,phone:12348},
+                    {name:"nameSeven",age:7,phone:12349},
+                    {name:"nameEight",age:8,phone:123410},
+                    {name:"nameNine",age:9,phone:123411},
+                    {name:"nameTen",age:10,phone:123412},
+                    {name:"nameEleven",age:11,phone:123413},
+                    {name:"nameTwelve",age:12,phone:123414},
+                    {name:"namethirteen",age:13,phone:123415},
+
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
