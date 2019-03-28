@@ -16,7 +16,15 @@
             <!-- (name, index) for getting index also -->
         </ul>
     </div>
+    <!-- if we need to use elements other than list -- try to use templates  -->
+    <template v-for = "(name,index) in nameList">
+                <!-- v-for is used to iterate through list -->
+                <h3>{{name}}</h3>
+                <p>{{index}}</p>
+                <!-- (name, index) for getting index also -->
+    </template>
 </div>
+
 <script>
     new Vue({
         el:'#app',
