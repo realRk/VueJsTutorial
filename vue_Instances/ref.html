@@ -1,0 +1,32 @@
+<!-- ref is a vuejs provided function that'd be used to access or get the content of an html element  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click= "showButtonContent" ref = "myButton">Button_ref</button>
+    <h1>{{name}}</h1>
+</div>    
+<script>
+     new Vue({
+         el:'#app',
+         data:{
+            name :'...........'
+         },
+         methods:{
+             showButtonContent:function(){
+                // (this.$ref.myButton.innerText)
+                this.name = this.$refs.myButton.innerText
+             }
+         }
+     })
+</script>
+</body>
+</html>
